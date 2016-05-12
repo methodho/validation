@@ -10,7 +10,8 @@ Some sample to do the validating things
 
 
 ```java
-@AssertThat(value = "this.age >= 18 || (this.age < 18  && not empty(this.parent))",
+@AssertThat(
+	value = "this.age >= 18 || (this.age < 18  && not empty(this.parent))",
     propertyNode = "age")
 @Getter
 @Setter
