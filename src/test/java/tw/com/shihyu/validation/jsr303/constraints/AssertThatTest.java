@@ -31,7 +31,7 @@ public class AssertThatTest {
   }
 
   @Test
-  public void testPropertyNode() {
+  public void test() {
     MyBean bean = new MyBean();
     bean.age = 19;
     Set<ConstraintViolation<MyBean>> results = validator.validate(bean);
@@ -41,7 +41,6 @@ public class AssertThatTest {
     results = validator.validate(bean);
     Assert.assertFalse(results.isEmpty());
     Assert.assertEquals(1, results.size());
-    System.out.println(results);
     results.forEach(v -> Assert.assertEquals("age", v.getPropertyPath().toString()));
   }
 
@@ -55,11 +54,29 @@ public class AssertThatTest {
 
 
   @Test
-  public void test() {
+  public void test2() {
     MyBean2 bean = new MyBean2();
     bean.age = 5;
     bean.birthday = LocalDate.now().minusYears(bean.age);
     Set<ConstraintViolation<MyBean2>> results = validator.validate(bean);
+    Assert.assertTrue(results.isEmpty());
+  }
+
+  @Getter
+  public static class MyBean3 {
+    @AssertThat("this.isAfter(forName('java.time.LocalDate').now().plusDays(7))")
+    LocalDate expire;
+  }
+
+  @Test
+  public void test3() {
+    MyBean3 bean = new MyBean3();
+    bean.expire = LocalDate.now();
+    Set<ConstraintViolation<MyBean3>> results = validator.validate(bean);
+    Assert.assertFalse(results.isEmpty());
+
+    bean.expire = LocalDate.now().plusDays(8);
+    results = validator.validate(bean);
     Assert.assertTrue(results.isEmpty());
   }
 

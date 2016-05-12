@@ -10,10 +10,15 @@ Some sample to do the validating things
 
 
 ```java
-@AssertThat("this.age >= 18 || (this.age < 18 && not empty(this.parent))")
+@AssertThat(value = "this.age >= 18 || (this.age < 18  && not empty(this.parent))",
+    propertyNode = "age")
+@Getter
+@Setter
 public class MyBean {
 	private int age;
 	private String parent;
+	@AssertThat("this.isAfter(forName('java.time.LocalDate').now().plusDays(7))")
+	private LocalDate expire;
 	// ...
 }
 ```
