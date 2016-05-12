@@ -15,7 +15,7 @@ import org.apache.commons.jexl3.MapContext;
 import tw.com.shihyu.validation.jsr303.constraints.AssertThat;
 
 /**
- * implementation using JEXL3
+ * Implementation using JEXL3
  * 
  * @author Matt S.Y. Ho
  *

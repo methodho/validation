@@ -13,6 +13,11 @@ import org.junit.Test;
 
 import lombok.Getter;
 
+/**
+ * 
+ * @author Matt S.Y. Ho
+ *
+ */
 public class AssertThatTest {
 
   private Validator validator;

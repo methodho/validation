@@ -13,12 +13,13 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 import javax.validation.Constraint;
+import javax.validation.ConstraintViolation;
 import javax.validation.Payload;
 
 import tw.com.shihyu.validation.jsr303.AssertThatValidator;
 
 /**
- * Assert the giving expression true <br>
+ * Assert the given expression true
  * 
  * @author Matt S.Y. Ho
  */
@@ -34,7 +35,7 @@ public @interface AssertThat {
     Class<?> clazz();
   }
 
-  String message() default "{tw.com.softleader.commons.validation.constraints.AssertThat.message}";
+  String message() default "{tw.com.shihyu.validation.jsr303.constraints.AssertThat.message}";
 
   Class<?>[] groups() default {};
 
@@ -49,7 +50,7 @@ public @interface AssertThat {
   /**
    * default <code>'this'</code>
    * 
-   * @return the alias for the value object used in expression
+   * @return the alias representing the value in expression
    */
   String alias() default "this";
 
@@ -61,7 +62,7 @@ public @interface AssertThat {
   Namespace[] namespaces() default {};
 
   /**
-   * Indicate propertyNode for ConstraintViolation
+   * Indicate propertyNode for {@link ConstraintViolation#getPropertyPath()}
    * 
    * @return
    */
