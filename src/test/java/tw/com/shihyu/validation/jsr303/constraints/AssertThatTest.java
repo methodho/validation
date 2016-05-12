@@ -69,7 +69,7 @@ public class AssertThatTest {
 
   @Getter
   public static class MyBean3 {
-    @AssertThat("this.isAfter(forName('java.time.LocalDate').now().plusDays(7))")
+    @AssertThat("this != null && this.isAfter(forName('java.time.LocalDate').now().plusDays(7))")
     LocalDate expire;
   }
 

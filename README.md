@@ -18,7 +18,7 @@ Some sample to do the validating things
 public class MyBean {
 	private int age;
 	private String parent;
-	@AssertThat("this.isAfter(forName('java.time.LocalDate').now().plusDays(7))")
+	@AssertThat("this != null && this.isAfter(forName('java.time.LocalDate').now().plusDays(7))")
 	private LocalDate expire;
 	// ...
 }
