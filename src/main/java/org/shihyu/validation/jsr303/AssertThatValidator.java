@@ -1,4 +1,4 @@
-package tw.com.shihyu.validation.jsr303;
+package org.shihyu.validation.jsr303;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,8 +11,7 @@ import org.apache.commons.jexl3.JexlBuilder;
 import org.apache.commons.jexl3.JexlContext;
 import org.apache.commons.jexl3.JexlEngine;
 import org.apache.commons.jexl3.MapContext;
-
-import tw.com.shihyu.validation.jsr303.constraints.AssertThat;
+import org.shihyu.validation.jsr303.constraints.AssertThat;
 
 /**
  * Implementation using JEXL3

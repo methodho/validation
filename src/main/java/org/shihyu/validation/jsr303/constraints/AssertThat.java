@@ -1,4 +1,4 @@
-package tw.com.shihyu.validation.jsr303.constraints;
+package org.shihyu.validation.jsr303.constraints;
 
 import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
 import static java.lang.annotation.ElementType.CONSTRUCTOR;
@@ -16,7 +16,7 @@ import javax.validation.Constraint;
 import javax.validation.ConstraintViolation;
 import javax.validation.Payload;
 
-import tw.com.shihyu.validation.jsr303.AssertThatValidator;
+import org.shihyu.validation.jsr303.AssertThatValidator;
 
 /**
  * Assert the given expression true

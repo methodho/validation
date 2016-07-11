@@ -1,4 +1,4 @@
-package tw.com.shihyu.validation.jsr303.constraints;
+package org.shihyu.validation.jsr303.constraints;
 
 import java.time.LocalDate;
 import java.util.Set;
@@ -10,6 +10,7 @@ import javax.validation.Validator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.shihyu.validation.jsr303.constraints.AssertThat;
 
 import lombok.Getter;
 

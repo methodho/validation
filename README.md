@@ -4,7 +4,7 @@ Some sample to do the validating things
 
 ## JSR-303
 
-`package tw.com.shihyu.validation.jsr303`
+`package org.shihyu.validation.jsr303`
 
 ### Intergration with JEXL java expression language
 
